@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class TVException {
+class TVException extends RuntimeException {
+    public TVException(String message) {
+        super(message);
+    }
 }

@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 class Goat {
-    private static Goat instance;
+    private static final Goat instance = new Goat();
 
     private List<ShelfItem> items;
 
@@ -12,10 +12,24 @@ class Goat {
     }
 
     public static Goat getInstance() {
-        if (instance == null) {
-            instance = new Goat();
-        }
         return instance;
+    }
+
+    static class Dream {
+        private String description;
+
+        public Dream(String description) {
+            this.description = description;
+        }
+
+        public void shareDream() {
+            System.out.println("Козлик мечтает " + description);
+        }
+    }
+
+    public void shareDream(String description) {
+        Dream dream = new Dream(description);
+        dream.shareDream();
     }
 
     public void interactWithShelf(Shelf shelf) {
@@ -42,6 +56,7 @@ class Goat {
         }
     }
 
+
     private boolean dropSantik() throws PaymentException {
         Random random = new Random();
         if (random.nextBoolean()) {
@@ -64,4 +79,3 @@ class Goat {
         }
     }
 }
-

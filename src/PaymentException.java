@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class PaymentException {
+class PaymentException extends Exception {
+    public PaymentException(String message) {
+        super(message);
+    }
 }

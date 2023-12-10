@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class ShelfItem {
+interface ShelfItem {
+    void use();
+
+    int getCost();
 }

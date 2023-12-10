@@ -7,7 +7,7 @@ public class Main {
         shelf.putItem(new Sheet());
         shelf.putItem(new Blanket());
         shelf.putItem(new Pillow());
-
+        goat.shareDream("о том, чтоб сантик приняли с первой попытки...");
         goat.watchTV();
     }
 }

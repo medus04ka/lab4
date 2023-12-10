@@ -1,2 +1,5 @@
-package PACKAGE_NAME;public class SantikInteraction {
+interface SantikInteraction {
+    boolean dropSantik() throws PaymentException;
+
+    void pickUpSantik();
 }
