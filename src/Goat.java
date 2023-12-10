@@ -75,7 +75,7 @@ class Goat {
             TV.turnOn();
             System.out.println("Стоп.. что? козлик смотрит телевизор?? у него получилось!");
         } catch (TVException | PaymentException e) {
-            System.out.println("Боже казус, " + e.getMessage());
+            System.out.println("Боже казус, " + e.getMessage() + " Козлик в ауте...");
         }
     }
 }
