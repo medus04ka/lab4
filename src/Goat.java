@@ -38,7 +38,7 @@ class Goat {
         }
     }
 
-    public void interactWithShelf(Shelf shelf, DespairScenario despairScenario) {
+    public void interactWithShelf(Shelf shelf, FallExecuter fallExecuter) {
         try {
             int attempts = 0;
             while (attempts < 2) {
@@ -57,7 +57,7 @@ class Goat {
                 }
             }
             System.out.println("Вторая попытка оплаты неудачна. Козлик идет спать.");
-            despairScenario.despairAfterGettingItems();
+            fallExecuter.execute();
         } catch (PaymentException e) {
             System.out.println("я просто промолчу, но.. " + e.getMessage());
         }
@@ -88,7 +88,13 @@ class Goat {
 
     class FallHandler {
         public void handleFall() {
-            System.out.println("Козлик от бессилия повернулся и споткнулся, он смарчно ударился головой, ой ой наверное это больно");
+            System.out.println("В жизни все просто, козлик неудачник, он ненавидел фембойчиков вот и поплатился");
+        }
+    }
+
+    class Life {
+        public void russia() {
+            System.out.println("Такова жестокая жизнь в России, но по факту, он получил то, что заслужил");
         }
     }
 }

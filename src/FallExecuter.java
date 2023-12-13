@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public interface FallExecuter {
+public interface FallExecuter {
+    void execute();
 }
+

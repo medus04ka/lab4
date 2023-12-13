@@ -2,15 +2,23 @@ public class Main {
         public static void main(String[] args) {
             Shelf shelf = new Shelf();
             Goat goat = Goat.getInstance();
-            Goat.DespairScenario despairScenario = goat.new DespairScenario();
-            goat.interactWithShelf(shelf, despairScenario);
+            FallExecuter fallExecuter = new FallExecuter() {
+                @Override
+                public void execute() {
+                    System.out.println("Козлик от бессилия повернулся и споткнулся, он смарчно ударился головой, ой ой наверное это больно");
+                }
+            };
+            goat.interactWithShelf(shelf, fallExecuter);
             shelf.putItem(new Sheet());
             shelf.putItem(new Blanket());
             shelf.putItem(new Pillow());
             goat.shareDream("о том, чтоб сантик приняли с первой попытки...");
             new TV.TVPaymentHandler().handlePayment();
             goat.watchTV();
+            fallExecuter.execute();
             Goat.FallHandler fallHandler = goat.new FallHandler();
             fallHandler.handleFall();
+            Goat.Life life = goat.new Life();
+            life.russia();
         }
     }
