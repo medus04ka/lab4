@@ -23,4 +23,15 @@ class TV {
         }
         System.out.println("Козлик смотрит телевизор.");
     }
+
+    static class TVPaymentHandler {
+        public void handlePayment() {
+            try {
+                makePayment();
+                System.out.println("Телевизор готов к работе.");
+            } catch (PaymentException e) {
+                System.out.println("Мне очень жаль, но " + e.getMessage());
+            }
+        }
+    }
 }

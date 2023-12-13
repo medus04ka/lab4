@@ -32,7 +32,13 @@ class Goat {
         dream.shareDream();
     }
 
-    public void interactWithShelf(Shelf shelf) {
+    class DespairScenario {
+        public void despairAfterGettingItems() {
+            System.out.println("Козлик устал бороться с этими железяками, он просто хочет жить... ");
+        }
+    }
+
+    public void interactWithShelf(Shelf shelf, DespairScenario despairScenario) {
         try {
             int attempts = 0;
             while (attempts < 2) {
@@ -51,6 +57,7 @@ class Goat {
                 }
             }
             System.out.println("Вторая попытка оплаты неудачна. Козлик идет спать.");
+            despairScenario.despairAfterGettingItems();
         } catch (PaymentException e) {
             System.out.println("я просто промолчу, но.. " + e.getMessage());
         }
@@ -76,6 +83,12 @@ class Goat {
             System.out.println("Стоп.. что? козлик смотрит телевизор?? у него получилось!");
         } catch (TVException | PaymentException e) {
             System.out.println("Боже казус, " + e.getMessage() + " Козлик в ауте...");
+        }
+    }
+
+    class FallHandler {
+        public void handleFall() {
+            System.out.println("Козлик от бессилия повернулся и споткнулся, он смарчно ударился головой, ой ой наверное это больно");
         }
     }
 }
