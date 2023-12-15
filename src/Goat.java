@@ -32,13 +32,17 @@ class Goat {
         dream.shareDream();
     }
 
-    class DespairScenario {
-        public void despairAfterGettingItems() {
-            System.out.println("Козлик устал бороться с этими железяками, он просто хочет жить... ");
-        }
-    }
+    public Shok interactWithShelf(Shelf shelf, FallExecuter fallExecuter) {
 
-    public void interactWithShelf(Shelf shelf, FallExecuter fallExecuter) {
+        class AmazedGoat implements Shok {
+            @Override
+            public void amaze() {
+                System.out.println("О боже я в полном недоумении от всего происходящего, неужели я это заслужил - подумал козлик");
+            }
+        }
+
+        final AmazedGoat amazedGoat = new AmazedGoat();
+
         try {
             int attempts = 0;
             while (attempts < 2) {
@@ -47,7 +51,8 @@ class Goat {
                     System.out.println("Козлик уронил сантик.");
                     if (shelf.putItem(new Santik())) {
                         System.out.println("Козлик получил спальные предметы.");
-                        return;
+                        amazedGoat.amaze();
+                        return amazedGoat;
                     } else {
                         System.out.println("Язычок не принял сантик, повторная попытка оплаты.");
                     }
@@ -61,6 +66,7 @@ class Goat {
         } catch (PaymentException e) {
             System.out.println("я просто промолчу, но.. " + e.getMessage());
         }
+        return amazedGoat;
     }
 
 

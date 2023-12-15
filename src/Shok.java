@@ -1,3 +1,3 @@
-public interface Ahuy {
+public interface Shok {
     void amaze();
 }

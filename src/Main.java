@@ -5,7 +5,7 @@ public class Main {
             FallExecuter fallExecuter = new FallExecuter() {
                 @Override
                 public void execute() {
-                    System.out.println("Козлик от бессилия повернулся и споткнулся, он смарчно ударился головой, ой ой наверное это больно");
+                    System.out.println("Козлик от бессилия повернулся и споткнулся, он смарчно ударился головой, ой ой наверное это больно)()))(()())(())()(()()())(())(()()");
                 }
             };
             goat.interactWithShelf(shelf, fallExecuter);
@@ -18,6 +18,8 @@ public class Main {
             fallExecuter.execute();
             Goat.FallHandler fallHandler = goat.new FallHandler();
             fallHandler.handleFall();
+            Shok amazedGoat = goat.interactWithShelf(shelf, fallExecuter);
+            amazedGoat.amaze();
             Goat.Life life = goat.new Life();
             life.russia();
         }
