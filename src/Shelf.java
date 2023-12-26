@@ -9,7 +9,7 @@ class Shelf {
         this.items = new ArrayList<>();
     }
 
-    public boolean putItem(ShelfItem item) {
+    public boolean putItem(ShelfItem item, Action action) {
         try {
             int attempts = 0;
             while (attempts < 2) {
@@ -17,6 +17,7 @@ class Shelf {
                 if (accepted) {
                     items.add(item);
                     System.out.println("Козлик положил " + item.getClass().getSimpleName() + " на полочку.");
+                    action.performAction(item);
                     return true;
                 } else {
                     System.out.println("Что за казус, " + new PaymentException("").getMessage());

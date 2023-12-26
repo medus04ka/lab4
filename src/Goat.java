@@ -49,7 +49,7 @@ class Goat {
                 boolean santikDropped = dropSantik();
                 if (santikDropped) {
                     System.out.println("Козлик уронил сантик.");
-                    if (shelf.putItem(new Santik())) {
+                    if (shelf.putItem(new Santik(), item -> System.out.println("Козлик с грустью посмотрел на " + item.getClass().getSimpleName()))) {
                         System.out.println("Козлик получил спальные предметы.");
                         amazedGoat.amaze();
                         return amazedGoat;
