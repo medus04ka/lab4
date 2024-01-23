@@ -22,5 +22,7 @@ public class Main {
         amazedGoat.amaze();
         Goat.Life life = goat.new Life();
         life.russia();
+
+        Reflect.listMethods("Goat");
     }
 }
